@@ -19,18 +19,18 @@ jobs:
       run: npx playwright install --with-deps
     - name: Run Playwright tests
       run: npx playwright test
-    - name: allure report create
-      run: allure generate --clean 
+    # - name: allure report create
+    #   run: allure generate --clean 
     - uses: actions/upload-artifact@v3
       if: always()
       with:
         name: playwright-report
         path: playwright-report/
         retention-days: 30
-    - uses: actions/upload-artifact@v3
-      if: always()
-      with:
-        name: allure-report
-        if-no-files-found: error
-        path: ./allure-report
-        retention-days: 30
+    # - uses: actions/upload-artifact@v3
+    #   if: always()
+    #   with:
+    #     name: allure-report
+    #     if-no-files-found: error
+    #     path: ./allure-report
+    #     retention-days: 30
